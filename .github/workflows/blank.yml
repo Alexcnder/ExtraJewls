@@ -1,0 +1,37 @@
+name: CI for Adding New Ore
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  add-ore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Duplicate existing ore file
+        run: |
+          cp path/to/existing_ore_file path/to/new_ore_file
+          echo "Duplicated existing ore file to create new ore file."
+
+      - name: Edit new ore file
+        run: |
+          sed -i 's/ExistingOre/NewOre/g' path/to/new_ore_file
+          echo "Edited new ore file to change references from ExistingOre to NewOre."
+
+      - name: Build the project
+        run: ./gradlew build
+
+      - name: Run tests
+        run: ./gradlew test
+
+      - name: Download and open on Forge
+        run: |
+          echo "Downloading and opening the mod on Forge..."
+          # Here you would add commands to download Forge and open the mod
+          # This might include downloading the Forge installer and running it with the mod
