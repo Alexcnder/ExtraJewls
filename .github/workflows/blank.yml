@@ -14,6 +14,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Add Ore Idea
+        run: |
+          echo "Adding new ore idea..."
+          # Add commands to implement the new ore idea
+
+      - name: Enhance the code
+        run: |
+          echo "Enhancing the code..."
+          # Add commands to enhance the code
+
+      - name: Implement the art
+        run: |
+          echo "Implementing the art..."
+          # Add commands to implement the art
+
       - name: Duplicate existing ore file
         run: |
           cp path/to/existing_ore_file path/to/new_ore_file
@@ -30,8 +45,7 @@ jobs:
       - name: Run tests
         run: ./gradlew test
 
-      - name: Download and open on Forge
+      - name: Test in Forge
         run: |
-          echo "Downloading and opening the mod on Forge..."
-          # Here you would add commands to download Forge and open the mod
-          # This might include downloading the Forge installer and running it with the mod
+          echo "Testing in Forge..."
+          # Add commands to download Forge and test the mod
